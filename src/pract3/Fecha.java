@@ -207,24 +207,44 @@ public class Fecha implements Comparable<Fecha> {
   }
 
   /**
-    * Change the date of this instance to the next year.
-    * EDGE CASES:
-    *   - Change from leap year to non leap year on 29 february
-    */
-  public Fecha siguienteAnio() {
-    setAnio(year_ + 1);
+   * Change the date of this instance to the next year.
+   * EDGE CASES:
+   *   - Change from leap year to non leap year on 29 february
+   */
+ public Fecha siguienteAnio() {
+   setAnio(year_ + 1);
 
-    try {
-      Fecha.isDiaValido(year_, month_, day_);
+   try {
+     Fecha.isDiaValido(year_, month_, day_);
 
-      // This exception is only thrown when changing from leap to non leap
-      // year on 29 feb
-    } catch (IllegalArgumentException e) {
-      setDia(28);
-    }
+     // This exception is only thrown when changing from leap to non leap
+     // year on 29 feb
+   } catch (IllegalArgumentException e) {
+     setDia(28);
+   }
 
-    return this;
+   return this;
+ }
+ 
+ /**
+  * Change the date of this instance to the next year.
+  * EDGE CASES:
+  *   - Change from leap year to non leap year on 29 february
+  */
+public Fecha siguienteAnio2() {
+  setAnio(year_ + 1);
+
+  try {
+    Fecha.isDiaValido(year_, month_, day_);
+
+    // This exception is only thrown when changing from leap to non leap
+    // year on 29 feb
+  } catch (IllegalArgumentException e) {
+    setDia(28);
   }
+
+  return this;
+}
 
   /**
     * Change the date of this instance to the previous year.
