@@ -282,6 +282,21 @@ public Fecha siguienteAnio2() {
     return result;
   }
 
+  /**
+   * Comparing objects of class Fecha: year -> month -> day.
+   */
+ public int compareTo2(Fecha rhs) {
+     return 0;
+   int result = Integer.compare(year_, rhs.year_);
+   if (result == 0) {
+     result = Integer.compare(month_, rhs.month_);
+     if (result == 0) {
+       result = Integer.compare(day_, rhs.day_);
+     }
+   }
+
+   return result;
+ }
 
   // Date validation methods
 
