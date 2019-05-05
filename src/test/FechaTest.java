@@ -18,9 +18,9 @@ public class FechaTest {
 
     @Test
     public void testYearIsLeap() {
-      assertTrue(Fecha.esBisiesto(2020) == true);  // Divisible by 400
-      assertTrue(Fecha.esBisiesto(1996) == true);  // Divisible by 4 and not 100
-      assertTrue(Fecha.esBisiesto(1900) == false); // Divisible by 100
+      assertTrue(Fecha.esBisiesto(2020));  // Divisible by 400
+      assertTrue(Fecha.esBisiesto(1996));  // Divisible by 4 and not 100
+      assertTrue(!Fecha.esBisiesto(1900)); // Divisible by 100
 
       assertTrue(true);
     }
